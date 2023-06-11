@@ -1,0 +1,166 @@
+{
+	"additionalNodes": [],
+	"additionalParameters": {
+		"root": {
+			"height": 168,
+			"width": 216
+		}
+	},
+	"inputs": [ {
+		"command": "BETS_UNIT",
+		"name": "transport"
+	}, {
+		"command": "BETS_UNIT",
+		"name": "unit"
+	}, {
+		"command": "Variable",
+		"name": "safeArea"
+	}, {
+		"command": "BETS_POSITION",
+		"name": "atlasPoint"
+	} ],
+	"outputs": [],
+	"properties": {
+		"IST7TPNbOXCeDikCIIXWYYYJdYnF8L49": {
+			"height": 112,
+			"title": "prevent landing on unloaded unit",
+			"width": 289,
+			"x": 914,
+			"y": 106
+		},
+		"OhhXMrouByHbAAjsRp6EUA0jmRpmbPo1": {
+			"height": 112,
+			"title": "prevent sliding",
+			"width": 269,
+			"x": 913,
+			"y": -27
+		},
+		"WrmocRGivdRH1eyT6SjjitTcXT8NzObV": {
+			"height": 60,
+			"title": "sequence",
+			"width": 143,
+			"x": 604,
+			"y": -65
+		},
+		"msF0eAti1ParycsfgrD0b4N09UPIXNfo": {
+			"height": 92,
+			"title": "unload unit",
+			"width": 260,
+			"x": 912,
+			"y": -130
+		},
+		"qAaS43xSzOhmOguqaSGB5xTVGXtutt3V": {
+			"height": 54,
+			"title": "failure",
+			"width": 131,
+			"x": 774,
+			"y": 297
+		},
+		"sX6Ijavz3kNCGIWY97YUZk4EINir67G4": {
+			"height": 92,
+			"title": "load unit",
+			"width": 244,
+			"x": 914,
+			"y": -233
+		},
+		"vMhnchtZi2FVXmrKl3GYzYZgduvDVDkO": {
+			"height": 90,
+			"title": "luaCondition",
+			"width": 232,
+			"x": 279,
+			"y": 25
+		}
+	},
+	"roles": [ {
+		"categories": [],
+		"name": "Role 0"
+	} ],
+	"root": {
+		"children": [ {
+			"children": [ {
+				"children": [],
+				"id": "sX6Ijavz3kNCGIWY97YUZk4EINir67G4",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "transporter",
+					"value": "transport"
+				}, {
+					"name": "unit",
+					"value": "unit"
+				}, {
+					"name": "scriptName",
+					"value": "nota_kahlan_ttdr.loadUnit"
+				} ],
+				"scriptName": "nota_kahlan_ttdr.loadUnit"
+			}, {
+				"children": [],
+				"id": "msF0eAti1ParycsfgrD0b4N09UPIXNfo",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "transporter",
+					"value": "transport"
+				}, {
+					"name": "unit",
+					"value": "unit"
+				}, {
+					"name": "scriptName",
+					"value": "nota_kahlan_ttdr.unloadUnit"
+				} ],
+				"scriptName": "nota_kahlan_ttdr.unloadUnit"
+			}, {
+				"children": [],
+				"id": "OhhXMrouByHbAAjsRp6EUA0jmRpmbPo1",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "position",
+					"value": "safeArea.center"
+				}, {
+					"name": "unit",
+					"value": "unit"
+				}, {
+					"name": "radius",
+					"value": "safeArea.radius"
+				}, {
+					"name": "scriptName",
+					"value": "nota_kahlan_ttdr.moveUnitTo"
+				} ],
+				"scriptName": "nota_kahlan_ttdr.moveUnitTo"
+			}, {
+				"children": [],
+				"id": "IST7TPNbOXCeDikCIIXWYYYJdYnF8L49",
+				"nodeType": "luaCommand",
+				"parameters": [ {
+					"name": "position",
+					"value": "atlasPoint"
+				}, {
+					"name": "unit",
+					"value": "transport"
+				}, {
+					"name": "radius",
+					"value": "100"
+				}, {
+					"name": "scriptName",
+					"value": "nota_kahlan_ttdr.moveUnitTo"
+				} ],
+				"scriptName": "nota_kahlan_ttdr.moveUnitTo"
+			} ],
+			"id": "WrmocRGivdRH1eyT6SjjitTcXT8NzObV",
+			"nodeType": "sequence",
+			"parameters": []
+		}, {
+			"children": [],
+			"id": "qAaS43xSzOhmOguqaSGB5xTVGXtutt3V",
+			"nodeType": "failure",
+			"parameters": []
+		} ],
+		"id": "vMhnchtZi2FVXmrKl3GYzYZgduvDVDkO",
+		"nodeType": "luaCondition",
+		"parameters": [ {
+			"name": "expression",
+			"value": "transport ~= nil and unit ~= nil"
+		}, {
+			"name": "repeat",
+			"value": "false"
+		} ]
+	}
+}

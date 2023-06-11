@@ -1,0 +1,281 @@
+{
+	"additionalNodes": [],
+	"additionalParameters": {
+		"root": {
+			"height": 88,
+			"width": 180
+		}
+	},
+	"inputs": [],
+	"outputs": [],
+	"properties": {
+		"0SB5sb25ruwzeILMMzyWVrmnbQYXyxr4": {
+			"height": 92,
+			"title": "nota_kahlan_ctp2.moveUnitTo",
+			"width": 275,
+			"x": 1105,
+			"y": 617
+		},
+		"8sSWEEpJt7kv5ZYuvBOj3GY8gjvrisUX": {
+			"height": 92,
+			"title": "nota_kahlan_ctp2.moveUnitTo",
+			"width": 275,
+			"x": 1104,
+			"y": 734
+		},
+		"9UPuZizPqbHUQohGI3Ngj3intbwlQj4A": {
+			"height": 60,
+			"title": "sequence",
+			"width": 143,
+			"x": 236,
+			"y": 10
+		},
+		"EXLZhbA9l0aWfUsQUmAhkvwFHCgXGycR": {
+			"height": 60,
+			"title": "repeat",
+			"width": 131,
+			"x": 862,
+			"y": 331
+		},
+		"ITCBCBbvVkgfSI6OQmckWA4pxEGr5umr": {
+			"height": 60,
+			"title": "repeat",
+			"width": 131,
+			"x": 856,
+			"y": 511
+		},
+		"XfCnZIV3TUmGvGBPHg6hmOx98HX7WYIk": {
+			"height": 94,
+			"title": "store",
+			"width": 563,
+			"x": 465,
+			"y": 165
+		},
+		"bid7sthaORlsDCqgWQdNCVReRqVOKl4S": {
+			"height": 60,
+			"title": "repeat",
+			"width": 131,
+			"x": 867,
+			"y": 628
+		},
+		"d1n7vY2QsHVu7upHE69pZQgqSB82qq6c": {
+			"height": 94,
+			"title": "store",
+			"width": 440,
+			"x": 463,
+			"y": -66
+		},
+		"fq8A7ds6vnXKTVPJKWHWGqPqANc9g8db": {
+			"height": 70,
+			"title": "parallel",
+			"width": 202,
+			"x": 599,
+			"y": 327
+		},
+		"iMPSUAG2ptJ2b90Ld7TI9liv7r5OGcK3": {
+			"height": 94,
+			"title": "store",
+			"width": 198,
+			"x": 462,
+			"y": -157
+		},
+		"ku84uQv9dEbtwlbnkDpR3yjaXZQlrqXy": {
+			"height": 94,
+			"title": "store",
+			"width": 379,
+			"x": 469,
+			"y": 49
+		},
+		"nf6oGqtWUFzjm6oXHerBB1nqPVkZ0oWx": {
+			"height": 54,
+			"title": "nota_common.manualMissionEnd",
+			"width": 296,
+			"x": 1580,
+			"y": 333
+		},
+		"suS4fCT0g34XJL9A5TOQAxvu9Wax2WL1": {
+			"height": 92,
+			"title": "nota_kahlan_ctp2.moveUnitTo",
+			"width": 275,
+			"x": 1105,
+			"y": 500
+		},
+		"w4Odgr3IapKmyoBof4PggOFwgOecP8zZ": {
+			"height": 60,
+			"title": "repeat",
+			"width": 131,
+			"x": 871,
+			"y": 745
+		},
+		"zYZ96pTb4yKpxAnaZnQxyGH2KoIrxaM8": {
+			"height": 90,
+			"title": "win?",
+			"width": 381,
+			"x": 1101,
+			"y": 320
+		}
+	},
+	"roles": [ {
+		"categories": [],
+		"name": "Role 0"
+	} ],
+	"root": {
+		"children": [ {
+			"children": [],
+			"id": "iMPSUAG2ptJ2b90Ld7TI9liv7r5OGcK3",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "missionInfo"
+			}, {
+				"name": "value",
+				"value": "core.MissionInfo()"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "d1n7vY2QsHVu7upHE69pZQgqSB82qq6c",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "platforms"
+			}, {
+				"name": "value",
+				"value": "nota_kahlan_ctp2.GetPlatforms(missionInfo)"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "ku84uQv9dEbtwlbnkDpR3yjaXZQlrqXy",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "myUnits"
+			}, {
+				"name": "value",
+				"value": "Spring.GetTeamUnits(Spring.GetMyTeamID())"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [],
+			"id": "XfCnZIV3TUmGvGBPHg6hmOx98HX7WYIk",
+			"nodeType": "luaCommand",
+			"parameters": [ {
+				"name": "var",
+				"value": "runners"
+			}, {
+				"name": "value",
+				"value": "core.FilterUnitsByCategory(myUnits, Categories.nota_kahlan_ctp2.runners)"
+			}, {
+				"name": "scriptName",
+				"value": "store"
+			} ],
+			"scriptName": "store"
+		}, {
+			"children": [ {
+				"children": [ {
+					"children": [ {
+						"children": [],
+						"id": "nf6oGqtWUFzjm6oXHerBB1nqPVkZ0oWx",
+						"nodeType": "luaCommand",
+						"parameters": [ {
+							"name": "scriptName",
+							"value": "nota_common.manualMissionEnd"
+						} ],
+						"scriptName": "nota_common.manualMissionEnd"
+					} ],
+					"id": "zYZ96pTb4yKpxAnaZnQxyGH2KoIrxaM8",
+					"nodeType": "luaCondition",
+					"parameters": [ {
+						"name": "expression",
+						"value": "core.MissionInfo().score >= missionInfo.scoreMinimal"
+					}, {
+						"name": "repeat",
+						"value": "true"
+					} ]
+				} ],
+				"id": "EXLZhbA9l0aWfUsQUmAhkvwFHCgXGycR",
+				"nodeType": "repeat",
+				"parameters": []
+			}, {
+				"children": [ {
+					"children": [],
+					"id": "suS4fCT0g34XJL9A5TOQAxvu9Wax2WL1",
+					"nodeType": "luaCommand",
+					"parameters": [ {
+						"name": "position",
+						"value": "platforms[1]"
+					}, {
+						"name": "unit",
+						"value": "runners[1]"
+					}, {
+						"name": "scriptName",
+						"value": "nota_kahlan_ctp2.moveUnitTo"
+					} ],
+					"scriptName": "nota_kahlan_ctp2.moveUnitTo"
+				} ],
+				"id": "ITCBCBbvVkgfSI6OQmckWA4pxEGr5umr",
+				"nodeType": "repeat",
+				"parameters": []
+			}, {
+				"children": [ {
+					"children": [],
+					"id": "0SB5sb25ruwzeILMMzyWVrmnbQYXyxr4",
+					"nodeType": "luaCommand",
+					"parameters": [ {
+						"name": "position",
+						"value": "platforms[2]"
+					}, {
+						"name": "unit",
+						"value": "runners[2]"
+					}, {
+						"name": "scriptName",
+						"value": "nota_kahlan_ctp2.moveUnitTo"
+					} ],
+					"scriptName": "nota_kahlan_ctp2.moveUnitTo"
+				} ],
+				"id": "bid7sthaORlsDCqgWQdNCVReRqVOKl4S",
+				"nodeType": "repeat",
+				"parameters": []
+			}, {
+				"children": [ {
+					"children": [],
+					"id": "8sSWEEpJt7kv5ZYuvBOj3GY8gjvrisUX",
+					"nodeType": "luaCommand",
+					"parameters": [ {
+						"name": "position",
+						"value": "platforms[3]"
+					}, {
+						"name": "unit",
+						"value": "runners[3]"
+					}, {
+						"name": "scriptName",
+						"value": "nota_kahlan_ctp2.moveUnitTo"
+					} ],
+					"scriptName": "nota_kahlan_ctp2.moveUnitTo"
+				} ],
+				"id": "w4Odgr3IapKmyoBof4PggOFwgOecP8zZ",
+				"nodeType": "repeat",
+				"parameters": []
+			} ],
+			"id": "fq8A7ds6vnXKTVPJKWHWGqPqANc9g8db",
+			"nodeType": "parallel",
+			"parameters": [ {
+				"name": "mode",
+				"value": "all-success"
+			} ]
+		} ],
+		"id": "9UPuZizPqbHUQohGI3Ngj3intbwlQj4A",
+		"nodeType": "sequence",
+		"parameters": []
+	}
+}
